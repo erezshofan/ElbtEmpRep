@@ -1,0 +1,24 @@
+
+<div class="ElbitEmployeeForm">
+
+  <a routerLink="/">Back</a>
+
+  <h1 id="tableLabel">Employee Form</h1>
+
+  <div>
+    <label for="SSN" class="text-left">*SSN</label>
+    <input type="text" class="form-control" id="SSN" name="SSN" [(ngModel)]="strSSN" autocomplete="off" required [disabled]="isUpdated">
+  </div>
+  <div class="form-group">
+    <label for="FName">*First Name</label>
+    <input type="text" class="form-control" id="FName" name="FName" [(ngModel)]="strFName" autocomplete="off" required>
+  </div>
+  <div class="form-group">
+    <label for="LName">*Last Name</label>
+    <input type="text" class="form-control" id="LName" name="LName" [(ngModel)]="strLName" autocomplete="off" required>
+  </div>
+  <div>
+    <button type="submit" class="btn btn-success" (click)="saveNewEmp()" [disabled]="!(strSSN!=undefined && strSSN.length>0 && strFName!=undefined && strFName.length>0 && strLName!=undefined && strLName.length>0)">Save</button>
+  </div>
+</div>
+

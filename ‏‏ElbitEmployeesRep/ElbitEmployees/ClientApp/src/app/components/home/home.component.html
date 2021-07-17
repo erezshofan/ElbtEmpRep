@@ -1,0 +1,55 @@
+<div class="ElbitEmployeeList">
+
+  <div class='row'>
+    <div class='col-md-12 text-center'>
+      <h2>ELBIT Employees</h2>
+    </div>
+  </div>
+
+
+  <div class='row'>
+    <div class='col-md-12 text-center'>
+
+      <div class='row empItem' style="font-weight:bold">
+        <div class='col-md-3 text-left'>
+          <span>Employee ID</span>
+        </div>
+        <div class='col-md-3 text-left'>
+          <span>First Name</span>
+        </div>
+        <div class='col-md-3 text-left'>
+          <span>Last Name</span>
+        </div>
+        <div class='col-md-1'>
+          &nbsp;
+        </div>
+        <div class='col-md-1'>
+          &nbsp;
+        </div>
+      </div>
+
+
+      <div class='row empItem' *ngFor="let emp of apiService.Employees">
+        <div class='col-md-3 text-left'>
+          <span>{{ emp.ssn }}</span>
+        </div>
+        <div class='col-md-3 text-left'>
+          <span>{{ emp.fName }}</span>
+        </div>
+        <div class='col-md-3 text-left'>
+          <span>{{ emp.lName }}</span>
+        </div>
+        <div class='col-md-1'>
+          <button type="button" class="btn btn-primary btnView" (click)="deleteEmp(emp)">DELETE</button>
+        </div>
+        <div class='col-md-1'>
+          <button type="button" class="btn btn-primary btnView" (click)="updateEmp(emp)">UPDATE</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-primary btnView" (click)="addEmp()" style="margin-top:10px;">Add Employee</button>
+
+</div>
